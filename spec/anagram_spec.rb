@@ -3,10 +3,10 @@ require('anagram')
 require('pry')
 
 describe('Str#anagram') do
-  newStr = Str.new()
 
+  newStr = Str.new('ruby', 'bury')
   it('checks if two words are anagrams')do
-    expect(newStr('ruby', 'bury')).to eq(true)
+    expect(newStr.anagram?).to eq(true)
   end
   it('checks if two words with different cases are anagrams')do
     expect(newStr('Tea', 'Eat')).to eq(true)
