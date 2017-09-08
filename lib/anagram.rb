@@ -11,38 +11,30 @@ class TwoStr
   def anagram
     array1 = @str1.downcase.gsub(/[.,\/#!$%\^&\*;:{}=\-_`~()]/, "").split(' ')
     array2 = @str2.downcase.gsub(/[.,\/#!$%\^&\*;:{}=\-_`~()]/, "").split(' ')
-
-    for i in 0..(array1.length-1) do
-      if !(word?(array1[i]))
-        response = 'Please use real words'
-        return response
-      end
+    if array1.length > 1 and array2.length > 1
+      string = 'sentences'
+    else
+      string = 'words'
     end
-    for i in 0..(array2.length-1) do
-      if !(word?(array2[i]))
-        response = 'Please use real words'
-        return response
-      end
-    end
-    word1 = array1.join('')
-    wrod2 = array1.join('')
+    string1 = array1.join('')
+    string2 = array2.join('')
     #checks if words contain a vowel
-    if word?(@str1) and word?(@str2)
+    if word?(array1) and word?(array2)
       #checks if anagram
-      if @str1.downcase.split('').sort == @str2.downcase.split('').sort
-        response = 'These two words are anagrams'
+      if string1.split('').sort == string2.split('').sort
+        response = "These two #{string} are anagrams"
         #checks if palindrone
-        if @str1.downcase.reverse == @str1.downcase
+        if string1.reverse == string1
           response.concat(", #{@str1} is a palindrone")
-        elsif @str2.downcase.reverse == @str2.downcase
+        elsif string2.reverse == string2.downcase
           response.concat(", #{@str2} is a palindrone")
         end
       else
-        #checks if the two words match any characters
+        #checks if the two strings match any characters
         if @str1 =~ /[#{@str2}]/
-          response ='These two words are not anagrams'
+          response ="These two #{string} are not anagrams"
         else
-          response = 'These two words are antigrams'
+          response = "These two #{string} are antigrams"
         end
       end
     else
@@ -51,9 +43,14 @@ class TwoStr
     response
   end
 
-  def word?(word)
-    word =~ /[aeiou]/
+
+  def word?(array)
+    flag = true
+    array.each do |word|
+      if !(word =~ /[aeiou]/)
+        flag = false
+      end
+    end
+    flag
   end
-
-
 end

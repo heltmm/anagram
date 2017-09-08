@@ -23,6 +23,7 @@ describe('TwoStr#anagram') do
   it('checks if two words are anagrams, if so checks if palindrone')do
     expect(test4.anagram).to eq('These two words are anagrams, dad is a palindrone')
   end
+
   test5 = TwoStr.new('ruby', 'br')
   it('checks if inputs are words')do
     expect(test5.anagram).to eq('Please use real words')
@@ -32,12 +33,23 @@ describe('TwoStr#anagram') do
   it('if not anagram check if antigram')do
     expect(test6.anagram).to eq('These two words are antigrams')
   end
-  test7 = TwoStr.new('a man a plan a canal panama', 'napalm a canal panama')
+
+  test7 = TwoStr.new('the dog ate food', 'food the dog ate')
   it('checks if two sentences are anagrams')do
-    expect(test7.anagram).to eq('These two strings ar anagrams')
+    expect(test7.anagram).to eq('These two sentences are anagrams')
   end
-  test8 = TwoStr.new('a man a plan a canal pnm', 'napalm a canal panama')
+
+  test8 = TwoStr.new('the dog ate food', 'food the dog ate')
+  it('checks if two sentences are anagrams')do
+    expect(test8.anagram).to eq('These two sentences are anagrams')
+  end
+
+  test9 = TwoStr.new('a man a plan a canal panama', 'anna a lamp a canal panama')
+  it('checks if two sentences are anagrams if so check if palindrone')do
+    expect(test9.anagram).to eq('These two sentences are anagrams, a man a plan a canal panama is a palindrone')
+  end
+  test10 = TwoStr.new('a man a plan a canal pnm', 'napalm a canal panama')
   it('checks if used real words in the sentence')do
-    expect(test8.anagram).to eq('Please use real words')
+    expect(test10.anagram).to eq('Please use real words')
   end
 end
