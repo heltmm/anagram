@@ -9,9 +9,23 @@ class TwoStr
 
 
   def anagram
-    # array1 = @str1.donwcase.split(' ')
-    # array2 = @str2.downcase.split(' ')
+    array1 = @str1.downcase.gsub(/[.,\/#!$%\^&\*;:{}=\-_`~()]/, "").split(' ')
+    array2 = @str2.downcase.gsub(/[.,\/#!$%\^&\*;:{}=\-_`~()]/, "").split(' ')
 
+    for i in 0..(array1.length-1) do
+      if !(word?(array1[i]))
+        response = 'Please use real words'
+        return response
+      end
+    end
+    for i in 0..(array2.length-1) do
+      if !(word?(array2[i]))
+        response = 'Please use real words'
+        return response
+      end
+    end
+    word1 = array1.join('')
+    wrod2 = array1.join('')
     #checks if words contain a vowel
     if word?(@str1) and word?(@str2)
       #checks if anagram

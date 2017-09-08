@@ -29,10 +29,15 @@ describe('TwoStr#anagram') do
   end
 
   test6 = TwoStr.new('hi', 'bye')
-  it('if not anagagram check if antigram')do
+  it('if not anagram check if antigram')do
     expect(test6.anagram).to eq('These two words are antigrams')
   end
-  # it('checks if two sentences are anagrams')do
-  #   expect(newStr('ruby', 'bury')).to eq(true)
-  # end
+  test7 = TwoStr.new('a man a plan a canal panama', 'napalm a canal panama')
+  it('checks if two sentences are anagrams')do
+    expect(test7.anagram).to eq('These two strings ar anagrams')
+  end
+  test8 = TwoStr.new('a man a plan a canal pnm', 'napalm a canal panama')
+  it('checks if used real words in the sentence')do
+    expect(test8.anagram).to eq('Please use real words')
+  end
 end
