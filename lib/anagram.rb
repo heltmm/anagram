@@ -5,8 +5,12 @@ class Two_str
   end
 
 
-  def anagram?
-    @str1.downcase.split('').sort == @str2.downcase.split('').sort
+  def anagram
+    if @str1.downcase.split('').sort == @str2.downcase.split('').sort
+      'These two words are anagrams'
+    else
+      'These two words are not anagrams'
+    end
   end
   def word?
 
