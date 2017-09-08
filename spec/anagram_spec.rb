@@ -4,10 +4,10 @@ require('pry')
 
 describe('TwoStr#anagram') do
 
-  test1 = TwoStr.new('ruby', 'bury')
-  it('checks if two words are anagrams')do
-    expect(test1.anagram).to eq('These two words are anagrams')
-  end
+  # test1 = TwoStr.new('ruby', 'bury')
+  # it('checks if two words are anagrams')do
+  #   expect(test1.anagram).to eq('These two words are anagrams')
+  # end
 
   test2 = TwoStr.new('ruby', 'hury')
   it('checks if two words are not anagrams')do
@@ -28,9 +28,10 @@ describe('TwoStr#anagram') do
     expect(test5.anagram).to eq('Please use real words')
   end
 
-  # it('if not anagagram check if antigram')do
-  #   expect(newStr('hi', 'bye')).to eq('these words are antigrams')
-  # end
+  test6 = TwoStr.new('hi', 'bye')
+  it('if not anagagram check if antigram')do
+    expect(test6.anagram).to eq('These two words are antigrams')
+  end
   # it('checks if two sentences are anagrams')do
   #   expect(newStr('ruby', 'bury')).to eq(true)
   # end

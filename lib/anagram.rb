@@ -16,7 +16,11 @@ class TwoStr
           response.concat(", #{@str2} is a palindrone")
         end
       else
-        response ='These two words are not anagrams'
+        if @str1 =~ /[#{@str2}]/
+          response ='These two words are not anagrams'
+        else
+          response = 'These two words are antigrams'
+        end
       end
     else
       response = 'Please use real words'
@@ -24,10 +28,6 @@ class TwoStr
     response
   end
 
-
-  def word?
-
-  end
 
 
 end
