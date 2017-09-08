@@ -2,7 +2,7 @@ require('rspec')
 require('anagram')
 require('pry')
 
-describe('Str#anagram') do
+describe('TwoStr#anagram') do
 
   test1 = TwoStr.new('ruby', 'bury')
   it('checks if two words are anagrams')do
@@ -23,9 +23,11 @@ describe('Str#anagram') do
   it('checks if two words are anagrams, if so checks if palindrone')do
     expect(test4.anagram).to eq('These two words are anagrams, dad is a palindrone')
   end
-  # it('checks if inputs are words')do
-  #   expect(newStr('ruby', 'br')).to eq('You need to input actual words!')
-  # end
+  test5 = TwoStr.new('ruby', 'br')
+  it('checks if inputs are words')do
+    expect(test5.anagram).to eq('Please use real words')
+  end
+
   # it('if not anagagram check if antigram')do
   #   expect(newStr('hi', 'bye')).to eq('these words are antigrams')
   # end
