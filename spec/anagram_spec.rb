@@ -4,15 +4,17 @@ require('pry')
 
 describe('Str#anagram') do
 
-  newStr = Str.new('ruby', 'bury')
+  newStr = Two_str.new('ruby', 'bury')
   it('checks if two words are anagrams')do
     expect(newStr.anagram?).to eq(true)
   end
+  
+  newStr = Two_str.new('Tea', 'Eat')
   it('checks if two words with different cases are anagrams')do
-    expect(newStr('Tea', 'Eat')).to eq(true)
+    expect(newStr.anagram?).to eq(true)
   end
   it('checks if two words are anagrams, if so checks if palindrone')do
-    expect(newStr('racecar', 'racecar')).to eq(true)
+    expect(newStr.anagram?).to eq(true)
   end
   it('checks if inputs are words')do
     expect(newStr('ruby', 'br')).to eq('You need to input actual words!')
