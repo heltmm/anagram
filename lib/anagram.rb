@@ -14,7 +14,7 @@ class TwoStr
       string = 'words'
     end
 
-    #checks if words contain a vowel
+    #checks if words contain a vowel using word? method
     if word?(array1) and word?(array2)
       string1 = array1.join('')
       string2 = array2.join('')
@@ -30,7 +30,7 @@ class TwoStr
         end
       else
         #checks if the two strings match any characters
-        if @str1 =~ /[#{@str2}]/
+        if string1 =~ /[#{string2}]/
           response ="These two #{string} are not anagrams"
         else
           response = "These two #{string} are antigrams"

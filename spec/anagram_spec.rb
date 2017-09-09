@@ -34,13 +34,13 @@ describe('TwoStr#anagram') do
     expect(test6.anagram).to eq('These two words are antigrams')
   end
 
-  test7 = TwoStr.new('the dog ate food!', 'food, the dog ate')
+  test7 = TwoStr.new('the dog ate food', 'food the dog ate')
   it('checks if two sentences are anagrams')do
     expect(test7.anagram).to eq('These two sentences are anagrams')
   end
 
-  test8 = TwoStr.new('the dog ate food', 'food the dog ate')
-  it('checks if two sentences are anagrams')do
+  test8 = TwoStr.new('the dog ate food!', 'food, the dog ate')
+  it('checks if two sentences are anagrams ignoring punctuation')do
     expect(test8.anagram).to eq('These two sentences are anagrams')
   end
 
